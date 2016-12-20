@@ -16,27 +16,11 @@ namespace NotificationSystemSmsEmail.Models
         }
 
         /// <summary>
-        /// Get teh gateway account to use in sending sms message
+        /// Get the SMS Auth key
         /// </summary>
-        public string SmsAccount
+        public string SmsAuthKey
         {
-            get { return getAppSetting(typeof(string), "SmsAccount").ToString(); }
-        }
-
-        /// <summary>
-        /// Get the sub account to use for the sending of sms
-        /// </summary>
-        public string SubAccount
-        {
-            get { return getAppSetting(typeof(string), "SubAccount").ToString(); }
-        }
-
-        /// <summary>
-        /// Get the sub account password for the sms gateway
-        /// </summary>
-        public string SubAccountPwd
-        {
-            get { return getAppSetting(typeof(string), "SubAccountPass").ToString(); }
+            get { return getAppSetting(typeof(string), "SmsAuthKey").ToString(); }
         }
 
         private static object getAppSetting(Type expectedType, string key)
