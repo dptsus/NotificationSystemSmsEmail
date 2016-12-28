@@ -20,18 +20,8 @@ namespace NotificationSystemSmsEmail.Controllers
                 try
                 {
                     SmsService _smsService = new SmsService();
-                    //bool isSuccess = false;
-                    //string errMsg = null;
                     string response = _smsService.Send(sms); //Send sms
                     ViewData["SuccessMsg"] = response;
-                    //if (!isSuccess)
-                    //{
-                    //    ModelState.AddModelError("", errMsg);
-                    //}
-                    //else
-                    //{
-                        
-                    //}
                 }
                 catch (Exception ex)
                 {
