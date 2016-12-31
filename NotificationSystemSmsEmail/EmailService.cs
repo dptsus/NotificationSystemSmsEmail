@@ -1,18 +1,29 @@
 ﻿// using SendGrid's C# Library
 // https://github.com/sendgrid/sendgrid-csharp
-using System;
+using NotificationSystemSmsEmail.Models;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
-using NotificationSystemSmsEmail.Models;
+using System.Web;
+using System.Web.Caching;
 
 namespace NotificationSystemSmsEmail
 {
     public class EmailService
     {
+        private ConfigService _config;
+        private Cache _cache;
+
+        public EmailService()
+        {
+            _config = new ConfigService();
+            _cache = HttpContext.Current.Cache;
+
+        }
+
         public async Task SendEmail(EmailViewModel model)
         {
-            string apiKey = Environment.GetEnvironmentVariable("VishSendGridAPIKey", EnvironmentVariableTarget.User);
+            string apiKey = _config.SendGridAPIKey;
             dynamic sg = new SendGridAPIClient(apiKey);
 
             Email from = new Email(model.EmailFrom);

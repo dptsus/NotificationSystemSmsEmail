@@ -23,6 +23,14 @@ namespace NotificationSystemSmsEmail.Models
             get { return getAppSetting(typeof(string), "SmsAuthKey").ToString(); }
         }
 
+        /// <summary>
+        /// Get the SMS Auth key
+        /// </summary>
+        public string SendGridAPIKey
+        {
+            get { return getAppSetting(typeof(string), "SendGridAPIKey").ToString(); }
+        }
+
         private static object getAppSetting(Type expectedType, string key)
         {
             string value = ConfigurationManager.AppSettings[key]; //.Get(key);

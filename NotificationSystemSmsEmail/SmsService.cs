@@ -28,7 +28,7 @@ namespace NotificationSystemSmsEmail
             //Sender ID,While using route4 sender id should be 6 characters long.
             string senderId = sms.SenderId;
             //Your message to send, Add URL encoding here.
-            string message = HttpUtility.UrlEncode("Test message");
+            string message = HttpUtility.UrlEncode(sms.Message);
 
             //Prepare you post parameters
             StringBuilder sbPostData = new StringBuilder();

@@ -5,20 +5,20 @@ namespace NotificationSystemSmsEmail.Models
     public class EmailViewModel
     {
         [Required]
-        [Display(Name = "Email From")]
-        public string EmailFrom { get; set; }
+        [Display(Name = "From")]
+        public string From { get; set; }
 
         [Required]
-        [Display(Name = "Email To")]
-        public string EmailTo { get; set; }
+        [Display(Name = "To")]
+        public string To { get; set; }
 
         [Required]
-        [Display(Name = "Email Subject")]
-        public string EmailSubject { get; set; }
+        [Display(Name = "Subject")]
+        public string Subject { get; set; }
 
         [Required]
-        [Display(Name = "Email Content")]
-        public string EmailContent { get; set; }
+        [Display(Name = "Content")]
+        public string Content { get; set; }
 
     }
 }
