@@ -25,6 +25,8 @@ namespace NotificationSystemSmsEmail
             string authKey = _config.SmsAuthKey;
             //Multiple mobiles numbers separated by comma
             string mobileNumber = sms.Numbers;
+            //Your route to send, promotional=1/transactional=4
+            int route = sms.Route;
             //Sender ID,While using route4 sender id should be 6 characters long.
             string senderId = sms.SenderId;
             //Your message to send, Add URL encoding here.
@@ -36,7 +38,7 @@ namespace NotificationSystemSmsEmail
             sbPostData.AppendFormat("&mobiles={0}", mobileNumber);
             sbPostData.AppendFormat("&message={0}", message);
             sbPostData.AppendFormat("&sender={0}", senderId);
-            sbPostData.AppendFormat("&route={0}", 4);
+            sbPostData.AppendFormat("&route={0}", route);
 
             try
             {

@@ -24,13 +24,24 @@ namespace NotificationSystemSmsEmail.Controllers
                     EmailService emailService = new EmailService();
                     
                     await emailService.SendEmail(email); //Send sms
+
+                    TempData["SuccessMsg"] = "Email sent Successfully.";
                 }
                 catch (Exception ex)
                 {
                     ModelState.AddModelError("", ex.Message);
+                    TempData["SuccessMsg"] = ex.Message;
                 }
             }
-            return View(email);
+            return RedirectToAction("Success");
+            //return View(email);
+        }
+
+        [HttpGet]
+        public ActionResult Success()
+        {
+            ViewBag.Result = TempData["SuccessMsg"].ToString();
+            return View();
         }
 
     }

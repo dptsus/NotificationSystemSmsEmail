@@ -210,8 +210,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Sms\SendSMS.cshtml" />
     <Content Include="Views\Email\SendEmail.cshtml" />
+    <Content Include="Views\Sms\SendTransactionalSMS.cshtml" />
+    <Content Include="Views\Sms\SendPromotionalSMS.cshtml" />
+    <Content Include="Views\Sms\Success.cshtml" />
+    <Content Include="Views\Email\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

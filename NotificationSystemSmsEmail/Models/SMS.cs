@@ -7,5 +7,7 @@
         public string SenderId { get; set; }
 
         public string Message { get; set; }
+
+        public int Route { get; set; }
     }
 }
