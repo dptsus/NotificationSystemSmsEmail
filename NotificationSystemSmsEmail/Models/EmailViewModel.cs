@@ -6,19 +6,18 @@ namespace NotificationSystemSmsEmail.Models
     {
         [Required]
         [Display(Name = "From")]
-        public string From { get; set; }
+        public string EmailFrom { get; set; }
 
         [Required]
         [Display(Name = "To")]
-        public string To { get; set; }
+        public string EmailTo { get; set; }
 
         [Required]
         [Display(Name = "Subject")]
-        public string Subject { get; set; }
+        public string EmailSubject { get; set; }
 
         [Required]
         [Display(Name = "Content")]
-        public string Content { get; set; }
-
+        public string EmailContent { get; set; }
     }
 }

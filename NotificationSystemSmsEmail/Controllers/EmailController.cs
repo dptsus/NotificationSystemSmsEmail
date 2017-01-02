@@ -21,9 +21,9 @@ namespace NotificationSystemSmsEmail.Controllers
             {
                 try
                 {
-                    EmailService _emailService = new EmailService();
+                    EmailService emailService = new EmailService();
                     
-                    await _emailService.SendEmail(email); //Send sms
+                    await emailService.SendEmail(email); //Send sms
                 }
                 catch (Exception ex)
                 {
